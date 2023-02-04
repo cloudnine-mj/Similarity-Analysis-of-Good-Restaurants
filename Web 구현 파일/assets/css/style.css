@@ -1,0 +1,274 @@
+body{
+    background-color: black;
+    background-size:cover;
+    font-family: 'Gamja Flower', cursive;
+    text-align: center;
+    /* img size is 50x50 */
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+    /* Safari 4+ */
+    -moz-animation: bg-scrolling-reverse 0.92s infinite;
+    /* Fx 5+ */
+    -o-animation: bg-scrolling-reverse 0.92s infinite;
+    /* Opera 12+ */
+    animation: bg-scrolling-reverse 0.92s infinite;
+    /* IE 10+ */
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+  body::before {
+    font-size: 8rem;
+    font-weight: 100;
+    font-style: normal;
+  }
+  .header {
+    z-index: 100000;
+    position:fixed;
+    top :0;
+    left:0;
+    right:0;
+    width:1000px;
+    max-width:1000px;
+    height:25px;
+    background:#ffffff;
+    margin:auto;
+    }
+button { border:none; } 
+article{
+    display: flex;
+    flex-direction: column;
+}
+.question{
+    display: none;
+}
+#barChart{
+    display: none;
+}
+
+.fadeIn {
+    animation: fadein 0.2s;
+}
+
+.fadeInA{
+    animation: 0.25s fadeinDelay;
+}
+.fadeInB{
+    animation: 0.5s fadeinDelay;
+}
+.fadeInC{
+    animation: 0.75s fadeinDelay;
+}
+.fadeInD{
+  animation: 1.0s fadeinDelay;
+}
+.fadeInE{
+  animation: 1.25s fadeinDelay;
+}
+/* opacity 불투명도 */
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@keyframes fadeinDelay{
+    0% { opacity:0; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+/* all: unset; */
+/* button style */
+button{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: white;
+    color: black;
+}
+button:focus {
+    outline: none;
+  }
+button:disabled,
+button[disabled]{
+    border: 1px solid rgb(0, 0, 0);
+  background-color: white;
+  color: black;
+}
+.startBtn{
+    font-size: 20px;
+    width: 100px;
+    /* 요소 중앙정렬 */
+    margin: 0 auto; 
+}
+#restart{
+    animation: fadein 3s;
+    font-size: 25px;
+    width: 100px;
+    margin: 0 auto; 
+}
+#backToMain{
+  font-size: 25px;
+  width: 100px;
+  margin: 0 auto; 
+}
+
+.progress-bar{
+    height: 6px;
+}
+.progress {
+    height: 6px;
+}
+#id{
+    font-weight: bold;
+}
+/* 결과 페이지 */
+#yourResult{
+  animation: fadeinDelay 1.5s;
+}
+#img{ 
+  animation: fadeinDelay 1s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+#img2{ 
+animation: fadeinDelay 1.2s;
+width: 100px;
+height: 100px;
+margin: 0 auto;
+}
+#participant{
+  font-weight: bold;
+  animation: fadeinDelay 2s;
+}
+.plus{
+  animation: fadeinDelay 2.1s;
+}
+#participant2{
+  font-weight: bold;
+  animation: fadeinDelay 2.2s;
+}
+#explain{
+  animation: fadeinDelay 2.5s;
+}
+#explain2{
+  animation: fadeinDelay 2.7s;
+}
+#restart{
+    animation: fadeinDelay 3s;
+}
+.second{
+  display: none;
+}
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+    #footer {
+      color: #000000;
+      font-size: 0.9em;
+      text-align: center;
+    }
+    a:link {
+        text-decoration: none;
+        color: black;
+      }
+      a:visited {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        text-decoration: none;
+        color: black;
+      }
+      a:active {
+        text-decoration: none;
+        color: black;
+      }
+.question{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.result{
+    width: 100%;
+    height: 100%;
+    /* position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+.name{
+    text-align:center;
+}
+.star{
+    text-align:center;
+    
+}
+.blog{
+    text-align:center;
+}
+.review{
+    text-align:center;
+}
+#input_keyword{
+    border: black 2.5px solid;
+}
+
+.retry{
+  margin-top: 100px;
+}
+
+.res_title{
+  margin-bottom: 100px;
+}
+
+h4{
+  margin-right: 20px;
+}

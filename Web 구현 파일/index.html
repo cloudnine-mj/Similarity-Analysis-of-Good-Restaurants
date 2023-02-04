@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css link -->
+    <style type="text/css">
+      div.clickEffect{
+        position:fixed;
+        box-sizing:border-box;
+        border-style:solid;
+        border-color:#000000;
+        border-radius:50%;
+        animation:clickEffect 0.4s ease-out;
+        z-index:99999;
+      }
+      @keyframes clickEffect{
+        0%{
+          opacity:1;
+          width:0.5em; height:0.5em;
+          margin:-0.25em;
+          border-width:0.5rem;
+        }
+        100%{
+          opacity:0.2;
+          width:15em; height:15em;
+          margin:-7.5em;
+          border-width:0.03rem;
+        }
+      }
+      </style>
+      
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets\css\style.css">
+    <title>서면맛집</title>
+    <script>
+      window.onload = function () {
+document.getElementById("loadingIndicator").style.opacity = "0";
+setTimeout(function () {
+  document.getElementById("loadingIndicator").style.display = "none";
+}, 450);
+}
+  </script>
+  <style>
+    .preloader {
+  display:inline;
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: opacity .65s ease;
+  display: flex; justify-content: center; line-height:900px;
+  }
+  
+  </style>
+</head>
+
+<body class="container">
+
+  <article class="start" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="mt-3 mb-3"></div>
+        <h1 class="mt-5 text-center">서면맛집<br>대령이요</h1>
+        <h6 class="mt-3">#부전1동 부전2동 기준입니다.</h6>
+        <h6 class="">#코사인 유사도 분석입니다.</h6>
+        <h6 class="mb-5">#5개가 결과로 나옵니다.</h6>
+        <div class="mt-5 mb-5"></div>
+        <button type="button" class="startBtn mt-5 mb-5" onclick="start();">시작하기</button>
+        <div class="mt-5 mb-5"></div>
+  </article>
+
+  <article class="question fadeInC" >
+    <form id="form1" method="POST" action="/" class="btn" autocomplete="off">
+      <input id="input_keyword" type="text" autocomplete="off" name="restaurant" value="" onkeyup="if(window.event.keyCode==13){test()}">
+      <button id="btn1" onclick="next()">입력</button>
+      <h6 class="mt-3">#Keyword 중심으로 입력해주세요.</h6>
+      <h6 class="">#가게이름을 정확히 쳐도 됩니다.</h6>
+  </article>
+  <!-- js link -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+  <script src="assets\js\main.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    let data = {
+      text1: 'text01',
+    };
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "/", false);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.send(JSON.stringify(data));
+  </script>
+  <script>
+    var input = document.getElementById("input_keyword");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+       event.preventDefault();
+       document.getElementById("btn1").click();
+      }
+    });
+    </script>
+    
+    <script type="text/javascript">
+      function clickEffect(e){
+        var d=document.createElement("div");
+        d.className="clickEffect";
+        d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+        document.body.appendChild(d);
+        d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+      }
+      document.addEventListener('click',clickEffect);
+      </script>
+</body>
+<div id="loadingIndicator" class="preloader">
+    <div style="font-size: 100px; vertical-align:middle;">
+      <img src="loading.gif" alt="">
+    </div>
+</div>
+
+</html>
